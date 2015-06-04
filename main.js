@@ -138,6 +138,7 @@
     
     network.train(perceptron, training, config.network.learning_rate);
     fs.writeFileSync('./ocr.js', perceptron.standalone().toString());
+    fs.writeFileSync('./ocr.json', JSON.stringify(perceptron.toJSON()));
     network.test(perceptron, testing);
   }
   
@@ -192,6 +193,7 @@
         
         network.train(perceptron, training, config.network.learning_rate);
         fs.writeFileSync('./ocr.js', perceptron.standalone().toString());
+        fs.writeFileSync('./ocr.json', JSON.stringify(perceptron.toJSON()));
         network.test(perceptron, testing);
       }
     };
